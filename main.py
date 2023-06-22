@@ -23,7 +23,8 @@ def export_messages_with_multi_part(outputPath, logFilesList):
     #for i in range(0, 27):
     #    print("Total number of type ", str(i+1), " messages: ", msg_type_count[i])
     
-    save_dictionary_to_json(total_dictionary, False)
+    save_dictionary_to_json(total_dictionary, False, outputPath)
+    save_dictionary_to_csv()
 
 
 # MAIN

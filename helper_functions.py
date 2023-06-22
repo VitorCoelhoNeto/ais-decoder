@@ -8,6 +8,8 @@ from tqdm import tqdm
 
 
 def decode_given_file(file, total_dictionary, num_messages):
+    """
+    """
 
     for msg in tqdm(FileReaderStream(file), total=447869):
         try:
@@ -36,7 +38,9 @@ def decode_given_file(file, total_dictionary, num_messages):
     return num_messages
 
 
-def save_dictionary_to_json(total_dictionary, oneFile):
+def save_dictionary_to_json(total_dictionary, oneFile, outputPath):
+    """
+    """
     if oneFile:
         # Save entire dictionary to one JSON file
         with open("vessel_information.json", 'w') as fp:
@@ -44,8 +48,15 @@ def save_dictionary_to_json(total_dictionary, oneFile):
     else:
         # Save JSON file per vessel
         for key, value in total_dictionary.items():
-            with open("VesselJSONs\\"+str(key)+".json", 'w') as fp:
+            with open(outputPath + str(key)+".json", 'w') as fp:
                 json.dump(value, fp, indent=4)
+
+
+def save_dictionary_to_csv(total_dictionary):
+    """
+    """
+    
+    pass
 
 
 def get_log_files_list(path):
