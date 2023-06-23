@@ -13,9 +13,10 @@ def export_messages_with_multi_part(outputPath, logFilesList):
     num_messages = 0
     total_dictionary = defaultdict(dict)
     msg_type_count = [0]*27
+    fileCount = len(logFilesList)
 
     # For loop to go through file and decode each message. Adjust total accordingly
-    for file in tqdm(logFilesList, total = 72):
+    for file in tqdm(logFilesList, total = fileCount):
         num_messages = decode_given_file(file, total_dictionary, num_messages)
 
     # Debug
@@ -23,8 +24,8 @@ def export_messages_with_multi_part(outputPath, logFilesList):
     #for i in range(0, 27):
     #    print("Total number of type ", str(i+1), " messages: ", msg_type_count[i])
     
-    save_dictionary_to_json(total_dictionary, False, outputPath)
-    save_dictionary_to_csv()
+    #save_dictionary_to_json(total_dictionary, False, outputPath)
+    save_dictionary_to_csv(total_dictionary)
 
 
 # MAIN
