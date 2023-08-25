@@ -18,6 +18,7 @@ def export_messages_with_multi_part(outputPath, logFilesList):
     # For loop to go through file and decode each message. Adjust total accordingly
     for file in tqdm(logFilesList, total = fileCount):
         num_messages = decode_given_file(file, total_dictionary, num_messages)
+        #break # TODO Remove to decode all files
 
     # Debug
     print("Total number of messages: ", num_messages)
@@ -25,7 +26,7 @@ def export_messages_with_multi_part(outputPath, logFilesList):
     #    print("Total number of type ", str(i+1), " messages: ", msg_type_count[i])
     
     #save_dictionary_to_json(total_dictionary, False, outputPath)
-    save_dictionary_to_csv(total_dictionary)
+    save_dictionary_to_csv(total_dictionary, outputPath)
 
 
 # MAIN
