@@ -8,6 +8,7 @@ __pycache__/
 
 # Extras
 VesselJSONs/
+VesselCSVs/
 
 # Distribution / packaging
 .Python
