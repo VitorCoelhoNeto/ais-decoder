@@ -9,6 +9,8 @@ __pycache__/
 # Extras
 VesselJSONs/
 VesselCSVs/
+NewVesselCSVs/
+VesselCSVs3Days/
 
 # Distribution / packaging
 .Python
