@@ -68,44 +68,44 @@ def save_dictionary_to_csv(total_dictionary, outputPath):
     """
     for mmsi, messageList in total_dictionary.items():
         with open(outputPath + str(mmsi)+".csv", 'a') as fp:
-            fp.write("MessageNO" 
-                     + "," + "Repeat" 
-                     + "," + "Status" 
-                     + "," + "Turn"
-                     + "," + "Speed"
-                     + "," + "Accuracy"
-                     + "," + "Latitude"
-                     + "," + "Longitude"
-                     + "," + "Course"
-                     + "," + "Heading"
-                     + "," + "Year"
-                     + "," + "Month"
-                     + "," + "Day"
-                     + "," + "Hour"
-                     + "," + "Timestamp"
-                     + "," + "Maneuver"
-                     + "," + "Raim"
-                     + "," + "Radio"
+            fp.write(#"MessageNO" 
+                     #+ "," + "Repeat" 
+                     #+ "," + "Status" 
+                     #+ "," + "Turn"
+                     "LATITUDE"
+                     #+ "," + "Accuracy"
+                     + "," + "LONGITUDE"
+                     + "," + "SPEED"
+                     #+ "," + "Course"
+                     + "," + "HEADING"
+                     #+ "," + "Year"
+                     #+ "," + "Month"
+                     #+ "," + "Day"
+                     #+ "," + "Hour"
+                     #+ "," + "Timestamp"
+                     #+ "," + "Maneuver"
+                     #+ "," + "Raim"
+                     #+ "," + "Radio"
                      + "\n")
             for messageCount, message in messageList.items():
-                fp.write(str(messageCount) 
-                         + "," + str(message["Repeat"]   )
-                         + "," + str(message["Status" ]  ) 
-                         + "," + str(message["Turn"]     )
-                         + "," + str(message["Speed"]    )
-                         + "," + str(message["Accuracy"] )
-                         + "," + str(message["Latitude"])
-                         + "," + str(message["Longitude"] )
-                         + "," + str(message["Course"]   )  
+                fp.write(#str(messageCount) 
+                         #+ "," + str(message["Repeat"]   )
+                         #+ "," + str(message["Status" ]  ) 
+                         #+ "," + str(message["Turn"]     )
+                        str(message["Latitude"]    )
+                         #+ "," + str(message["Accuracy"] )
+                         + "," + str(message["Longitude"])
+                         + "," + str(message["Speed"] )
+                         #+ "," + str(message["Course"]   )  
                          + "," + str(message["Heading"]  )
-                         + "," + str(message["Year"]     )
-                         + "," + str(message["Month"]    )
-                         + "," + str(message["Day"]      )
-                         + "," + str(message["Hour"]     )
-                         + "," + str(message["Timestamp"])
-                         + "," + str(message["Maneuver"] )
-                         + "," + str(message["Raim"]     )
-                         + "," + str(message["Radio"]    )
+                         #+ "," + str(message["Year"]     )
+                         #+ "," + str(message["Month"]    )
+                         #+ "," + str(message["Day"]      )
+                         #+ "," + str(message["Hour"]     )
+                         #+ "," + str(message["Timestamp"])
+                         #+ "," + str(message["Maneuver"] )
+                         #+ "," + str(message["Raim"]     )
+                         #+ "," + str(message["Radio"]    )
                          + "\n")
                 # Debug
                 #print(mmsi, "\n", messageCount, "\n", message, "\n\n\n")
